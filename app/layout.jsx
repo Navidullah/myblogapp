@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "./components/ThemeProvider";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import { Providers } from "./providers/providers";
+import { Providers } from "./providers/Providers";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
