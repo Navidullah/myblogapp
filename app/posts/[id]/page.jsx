@@ -58,6 +58,14 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import axios from "axios";
 import CommentSection from "@/app/components/commentSection/CommentSection";
+import dynamic from "next/dynamic";
+
+// Dynamically import the client-only component
+const CommentSection = dynamic(
+  () => import("@/app/components/commentSection/CommentSection"),
+  { ssr: false }
+);
+
 //import CommentSection from "@/components/CommentSection"; // client component
 
 export default async function SinglePostPage({ params }) {
