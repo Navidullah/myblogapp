@@ -57,14 +57,11 @@ import React from "react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import axios from "axios";
-import CommentSection from "@/app/components/commentSection/CommentSection";
-import dynamic from "next/dynamic";
+//import CommentSection from "@/app/components/commentSection/CommentSection";
+//import dynamic from "next/dynamic";
+import ClientCommentWrapper from "@/app/components/commentSection/ClientCommentWrapper";
 
 // Dynamically import the client-only component
-const CommentSection = dynamic(
-  () => import("@/app/components/commentSection/CommentSection"),
-  { ssr: false }
-);
 
 //import CommentSection from "@/components/CommentSection"; // client component
 
@@ -114,7 +111,7 @@ export default async function SinglePostPage({ params }) {
         dangerouslySetInnerHTML={{ __html: blog.description }}
       />
 
-      <CommentSection postId={blog._id} />
+      <ClientCommentWrapper postId={blog._id} />
     </div>
   );
 }
