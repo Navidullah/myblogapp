@@ -1,5 +1,5 @@
 // components/authlinks/AuthLinks.jsx
-"use client";
+/*"use client";
 
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
@@ -37,4 +37,41 @@ const AuthLinks = ({ pathname }) => {
   );
 };
 
-export default AuthLinks;
+export default AuthLinks;*/
+// components/authlinks/AuthLinks.jsx
+import Link from "next/link";
+import { auth, signOut } from "@/utils/auth";
+
+export default async function AuthLinks() {
+  const session = await auth();
+
+  return (
+    <>
+      {session?.user ? (
+        <>
+          <Link
+            href="/dashboard"
+            className="text-[18px] px-2 py-1 hover:text-primary"
+          >
+            Dashboard
+          </Link>
+          <form action={async () => await signOut({ redirectTo: "/" })}>
+            <button
+              type="submit"
+              className="text-[18px] px-2 py-1 hover:text-primary cursor-pointer"
+            >
+              Logout
+            </button>
+          </form>
+        </>
+      ) : (
+        <Link
+          href="/login"
+          className="text-[18px] px-2 py-1 hover:text-primary"
+        >
+          Login
+        </Link>
+      )}
+    </>
+  );
+}

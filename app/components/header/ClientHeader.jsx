@@ -36,7 +36,7 @@ const ClientHeader = () => {
               </Link>
             );
           })}
-          <AuthLinks pathname={pathname} />
+          <AuthLinks />
         </div>
       </div>
     </div>
