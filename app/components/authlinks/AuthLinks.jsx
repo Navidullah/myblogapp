@@ -39,6 +39,7 @@ const AuthLinks = ({ pathname }) => {
 
 export default AuthLinks;*/
 // components/authlinks/AuthLinks.jsx
+"use client";
 import Link from "next/link";
 import { auth, signOut } from "@/utils/auth";
 

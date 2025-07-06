@@ -1,10 +1,10 @@
-/*"use client";
+"use client";
 
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
 import { ModeToggle } from "./ModeToggle";
-import AuthLinks from "../authlinks/AuthLinks";
+
 //import { ModeToggle } from "./ModeToggle";
 
 const navItems = [
@@ -18,8 +18,8 @@ const ClientHeader = () => {
   return (
     <div className=" h-full">
       <div className="flex justify-between items-center h-full">
-        {/* Navigation Links */
-/*<div className="hidden xl:flex  justify-around items-center gap-8">
+        {/* Navigation Links */}
+        <div className="hidden xl:flex  justify-around items-center gap-8">
           {navItems.map(({ label, href }) => {
             const isActive = pathname === href;
             return (
@@ -36,7 +36,6 @@ const ClientHeader = () => {
               </Link>
             );
           })}
-          <AuthLinks />
         </div>
       </div>
     </div>
@@ -44,7 +43,7 @@ const ClientHeader = () => {
 };
 
 export default ClientHeader;
-*/
+/*
 "use client";
 
 import Link from "next/link";
@@ -62,7 +61,7 @@ const ClientHeader = () => {
   return (
     <div className="h-full">
       <div className="flex justify-between items-center h-full">
-        {/* Navigation Links */}
+        {/* Navigation Links 
         <div className="hidden xl:flex justify-around items-center gap-8">
           {navItems.map(({ label, href }) => {
             const isActive = pathname === href;
@@ -86,4 +85,4 @@ const ClientHeader = () => {
   );
 };
 
-export default ClientHeader;
+export default ClientHeader;*/

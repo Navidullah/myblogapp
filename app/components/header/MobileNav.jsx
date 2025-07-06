@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { HiMenu } from "react-icons/hi";
 import { ModeToggle } from "./ModeToggle";
-import AuthLinks from "../authlinks/AuthLinks";
+import AuthLinks from "../authlinks/AuthLinksClient";
 
 const navItems = [
   { label: "Home", href: "/" },

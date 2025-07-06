@@ -41,12 +41,13 @@ const Header = () => {
 export default Header;*/
 // app/components/header/Header.jsx
 
-/*import ClientHeader from "./ClientHeader";
+import ClientHeader from "./ClientHeader";
 import { ModeToggle } from "./ModeToggle";
 import MobileNav from "./MobileNav";
 import Link from "next/link";
 import Image from "next/image";
-import AuthLinks from "../authlinks/AuthLinks"; // ✅ Server-only import
+//import AuthLinks from "../authlinks/AuthLinks"; // ✅ Server-only import
+import AuthLinksServer from "../authlinks/AuthLinksServer";
 
 export default async function Header() {
   return (
@@ -72,7 +73,7 @@ export default async function Header() {
 
         <div className="flex items-center gap-8">
           <ClientHeader />
-          <AuthLinks />
+          <AuthLinksServer />
           <ModeToggle />
           <div className="xl:hidden">
             <MobileNav />
@@ -82,7 +83,7 @@ export default async function Header() {
     </header>
   );
 }
-*/
+/*
 // components/header/Header.jsx
 import Link from "next/link";
 import Image from "next/image";
@@ -106,9 +107,10 @@ export default function Header() {
           />
         </Link>
 
-        {/* ✅ All client-only logic moved inside */}
+        {/* ✅ All client-only logic moved inside *
         <ClientHeaderWrapper />
       </div>
     </header>
   );
 }
+*/

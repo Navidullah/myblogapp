@@ -37,17 +37,9 @@ export default function RootLayout({ children }) {
         className={`${jetbrainsMono.variable} ${inter.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
-          {" "}
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Header />
-            {children}
-            <Footer />
-          </ThemeProvider>
+          <Header />
+          {children}
+          <Footer />
         </Providers>
       </body>
     </html>

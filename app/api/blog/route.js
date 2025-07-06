@@ -5,10 +5,10 @@ import { writeFile } from "fs/promises";
 const { NextResponse } = require("next/server");
 import { auth } from "@/utils/auth.js"; // wherever your auth.js is
 
-const LoadDB = async () => {
+/*const LoadDB = async () => {
   await ConnectDB();
 };
-LoadDB();
+LoadDB();*/
 /*export async function GET() {
   try {
     await ConnectDB();
@@ -19,6 +19,7 @@ LoadDB();
   }
 }*/
 export async function GET(req) {
+  await ConnectDB();
   const session = await auth(); // ✅ new way to get the session
 
   if (!session || !session.user?.email) {
@@ -37,6 +38,7 @@ export async function GET(req) {
 
 export async function POST(req) {
   try {
+    await ConnectDB();
     const formData = await req.formData();
     const timestamp = Date.now();
     const image = formData.get("image");
