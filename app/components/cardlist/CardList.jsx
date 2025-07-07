@@ -70,7 +70,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { getBaseUrl } from "@/utils/getBaseUrl";
+//import { getBaseUrl } from "@/utils/getBaseUrl";
 
 export default function CardList() {
   const [blogs, setBlogs] = useState([]);
@@ -79,8 +79,8 @@ export default function CardList() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const baseUrl = getBaseUrl();
-        const res = await axios.get(`${baseUrl}/api/publicblogs`);
+        //const baseUrl = getBaseUrl();
+        const res = await axios.get("/api/publicblogs");
         setBlogs(res.data);
       } catch (err) {
         console.error("Failed to fetch blogs:", err);

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { getBaseUrl } from "@/utils/getBaseUrl";
+//import { getBaseUrl } from "@/utils/getBaseUrl";
 
 export default function UserPostsPage() {
   const [posts, setPosts] = useState([]);
@@ -14,8 +14,9 @@ export default function UserPostsPage() {
   useEffect(() => {
     const fetchUserPosts = async () => {
       try {
-        const baseUrl = getBaseUrl();
-        const res = await axios.get(`${baseUrl}/api/blog`); // updated route
+        //const baseUrl = getBaseUrl();
+        //console.log(baseUrl);
+        const res = await axios.get("/api/blog"); // updated route
         if (res.status === 200) {
           setPosts(res.data);
         } else {

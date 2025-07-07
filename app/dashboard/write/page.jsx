@@ -206,7 +206,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
-import { getBaseUrl } from "@/utils/getBaseUrl";
+//import { getBaseUrl } from "@/utils/getBaseUrl";
 
 // Tiptap
 const TiptapEditor = dynamic(
@@ -270,9 +270,9 @@ export default function WritePage() {
         "authorImage",
         session.user.image || "/default-avatar.png"
       );
-      const baseUrl = getBaseUrl();
+      //const baseUrl = getBaseUrl();
 
-      const res = await axios.post(`${baseUrl}/api/blog`, formData);
+      const res = await axios.post("/api/blog", formData);
 
       if (res.status === 200) {
         toast.success("Blog posted successfully ✅");
