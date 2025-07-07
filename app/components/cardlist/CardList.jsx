@@ -79,7 +79,7 @@ export default function CardList() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const baseUrl = getBaseUrl();
+        //const baseUrl = getBaseUrl();
         const res = await axios.get("/api/publicblogs");
         setBlogs(res.data);
       } catch (err) {

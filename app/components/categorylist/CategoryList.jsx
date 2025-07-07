@@ -5,7 +5,7 @@ import ClientCategoryList from "./ClientCategoryList";
 async function getData() {
   const baseUrl = getBaseUrl();
   if (baseUrl === "https://blogapp-one-peach.vercel.app") {
-    const res = await fetch(`${baseUrl}api/categories`, {
+    const res = await fetch(`${baseUrl}/api/categories`, {
       cache: "no-store",
     });
     if (!res.ok) throw new Error("Failed to fetch categories");
