@@ -60,6 +60,7 @@ import axios from "axios";
 //import CommentSection from "@/app/components/commentSection/CommentSection";
 //import dynamic from "next/dynamic";
 import ClientCommentWrapper from "@/app/components/commentSection/ClientCommentWrapper";
+import { getBaseUrl } from "@/utils/getBaseUrl";
 
 // Dynamically import the client-only component
 
@@ -70,9 +71,8 @@ export default async function SinglePostPage({ params }) {
 
   let blog = null;
   try {
-    const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/blog/${id}`
-    );
+    const baseUrl = getBaseUrl();
+    const res = await axios.get(`${baseUrl}/api/blog/${id}`);
     blog = res.data;
   } catch (error) {
     console.error("Error fetching blog:", error);
