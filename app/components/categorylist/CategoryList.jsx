@@ -5,7 +5,7 @@ import ClientCategoryList from "./ClientCategoryList";
 async function getData() {
   //const baseUrl = getBaseUrl();
 
-  const res = await fetch("/api/categorie", {
+  const res = await fetch("/api/categories", {
     cache: "no-store",
   });
   if (!res.ok) throw new Error("Failed to fetch categories");
