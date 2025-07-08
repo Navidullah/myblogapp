@@ -72,6 +72,7 @@ export default async function SinglePostPage({ params }) {
   let blog = null;
   try {
     const baseUrl = getBaseUrl();
+    console.log(baseUrl);
     const res = await axios.get(`${baseUrl}/api/blog/${id}`);
     blog = res.data;
   } catch (error) {
