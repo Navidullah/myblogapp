@@ -1,11 +1,11 @@
 // No "use client" here → this is a Server Component
-import { getBaseUrl } from "@/utils/getBaseUrl";
+//import { getBaseUrl } from "@/utils/getBaseUrl";
 import ClientCategoryList from "./ClientCategoryList";
 
 async function getData() {
-  const baseUrl = getBaseUrl();
+  //const baseUrl = getBaseUrl();
 
-  const res = await fetch(`${baseUrl}/api/categories`, {
+  const res = await fetch("/api/categorie", {
     cache: "no-store",
   });
   if (!res.ok) throw new Error("Failed to fetch categories");

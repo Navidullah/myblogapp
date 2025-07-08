@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "react-toastify";
-import { getBaseUrl } from "@/utils/getBaseUrl";
+//import { getBaseUrl } from "@/utils/getBaseUrl";
 
 export default function CommentSection({ postId }) {
   const { data: session } = useSession();
@@ -20,8 +20,8 @@ export default function CommentSection({ postId }) {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const baseUrl = getBaseUrl();
-        const res = await axios.get(`${baseUrl}/api/comments/${postId}`);
+        //const baseUrl = getBaseUrl();
+        const res = await axios.get(`/api/comments/${postId}`);
         setComments(res.data);
       } catch (error) {
         console.error("Failed to fetch comments", error);
